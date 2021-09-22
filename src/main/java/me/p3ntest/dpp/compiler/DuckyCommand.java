@@ -11,7 +11,9 @@ public class DuckyCommand extends Command{
     }
 
     public String compile(ExecutionContext context) {
-        return type.compile(context.replaceVars(args));
+        String compiledArgs = context.replaceVars(args);
+        System.out.println(compiledArgs);
+        return type.compile(compiledArgs);
     }
 
 }

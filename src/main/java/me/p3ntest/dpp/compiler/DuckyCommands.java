@@ -3,11 +3,11 @@ package me.p3ntest.dpp.compiler;
 import java.util.Arrays;
 
 public enum DuckyCommands {
-    STRING(new String[]{"", ""}, (args) -> {
-        return "";
+    STRING(new String[]{"STRING", "TXT", "S"}, (args) -> {
+        return "STRING " + args;
     }),
-    REM(new String[]{"", ""}, (args) -> {
-        return "";
+    REM(new String[]{"REM", "COMMENT"}, (args) -> {
+        return null;
     });
 
     private final IDuckyCommandCompiler compiler;
@@ -19,7 +19,7 @@ public enum DuckyCommands {
     }
 
     public String compile(String args) {
-        return compile(args);
+        return this.compiler.compile(args);
     }
 
     public static DuckyCommands parseKeyWord(String keyWord) {

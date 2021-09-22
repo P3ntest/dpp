@@ -8,7 +8,7 @@ public class ExecutionContext {
 
     public String replaceVars(String props) {
         for (Map.Entry<String, String> entry : variables.entrySet()) {
-            props = props.replaceAll("$" + entry.getKey(), entry.getValue());
+            props = props.replaceAll("\\$" + entry.getKey(), entry.getValue());
         }
 
         return props;
