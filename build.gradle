@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'me.p3ntest'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'me.p3ntest.dpp.Main'
+    }
+}
+
+apply plugin: 'java'
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
+dependencies {
+
+}
+
+test {
+
+}
