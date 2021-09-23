@@ -22,7 +22,7 @@ compileJava {
 }
 
 dependencies {
-    implementation 'joda-time:joda-time:jar:2.10.11-SNAPSHOT'
+    implementation files('libs/joda-time-2.10.11.jar')
 }
 
 test {

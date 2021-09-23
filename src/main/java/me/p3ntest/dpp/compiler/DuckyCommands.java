@@ -1,5 +1,9 @@
 package me.p3ntest.dpp.compiler;
 
+import org.joda.time.Period;
+import org.joda.time.format.PeriodFormatter;
+import org.joda.time.format.PeriodFormatterBuilder;
+
 import java.util.Arrays;
 
 public enum DuckyCommands {
@@ -11,14 +15,13 @@ public enum DuckyCommands {
         return null;
     }),
     DELAY(new String[]{"DELAY", "WAIT", "TIMEOUT"}, (args) -> {
-//        PeriodFormatter formatter = new PeriodFormatterBuilder()
-//                .appendDays().appendSuffix("d ")
-//                .appendHours().appendSuffix("h ")
-//                .appendMinutes().appendSuffix("min")
-//                .toFormatter();
-//
-//        Period p = formatter.parsePeriod("2d 5h 30min");
-        return "DELAY " + args;
+        PeriodFormatter formatter = new PeriodFormatterBuilder()
+                .appendSeconds().appendSuffix("s ")
+                .appendMillis().appendSuffix("ms")
+                .toFormatter();
+
+        Period p = formatter.parsePeriod(args);
+        return "DELAY " + p.getMillis();
     }),
     REM(new String[]{"REM", "COMMENT"}, (args) -> {
         return null;
