@@ -10,7 +10,7 @@ public class DuckyCommand extends Command{
         this.args = args;
     }
 
-    public String compile(ExecutionContext context) {
+    public String compile(ExecutionContext context) throws DuckyException {
         String compiledArgs = context.replaceVars(args);
         System.out.println(compiledArgs);
         return type.compile(compiledArgs);

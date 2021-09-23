@@ -11,7 +11,7 @@ public class Main {
         ExecutionContext context = new ExecutionContext();
         context.setVar("HEY", "world");
 
-        System.out.println(Compiler.compileModule(Interpreter.interpretModule("TXT $HEY\n $HEY = BONJOUR\nLOG this is for debugging during transpile \nSTRING $HEY"), context));
+        System.out.println(Compiler.compileModule(Interpreter.interpretModule("TXT $HEY\n $HEY = BONJOUR\nDELAY 1s 1ms 3 \nSTRING $HEY"), context));
     }
 
 }
